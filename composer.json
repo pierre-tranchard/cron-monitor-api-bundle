@@ -3,6 +3,13 @@
   "license": "MIT",
   "type": "symfony-bundle",
   "description": "The server side for exposing an API to monitor your cron via the cron-monitor-bundle",
+    "authors": [
+        {
+            "name": "Pierre Tranchard",
+            "email": "pierre@tranchard.net"
+        }
+    ],
+    "keywords": ["cron", "api", "monitoring", "mongodb"],  
   "autoload": {
     "psr-4": {
       "Tranchard\\CronMonitorApiBundle\\": ""
