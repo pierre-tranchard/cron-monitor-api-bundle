@@ -68,6 +68,9 @@ class CronMonitorExtension extends Extension
         $xmlLoader->load('repositories.xml');
         $xmlLoader->load('checkers.xml');
         $xmlLoader->load('notification_system.xml');
+        $xmlLoader->load('controllers.xml');
+        $xmlLoader->load('event_services.xml');
+        $xmlLoader->load('authenticator.xml');
     }
 
     /**
