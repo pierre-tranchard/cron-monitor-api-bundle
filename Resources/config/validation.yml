@@ -1,0 +1,14 @@
+Tranchard\CronMonitorApiBundle\Document\CronReporter:
+    properties:
+        project:
+            - NotBlank: { message: "The project field cannot be blank" }
+        job:
+            - NotBlank: { message: "The job field cannot be blank" }
+        createdAt:
+            - DateTime: { message: "The datetime format is invalid" }
+        status:
+            - NotBlank: { message: "The status is invalid" }
+            - Choice: { callback: "getStatuses", message: "The status is invalid" }
+        duration:
+            - NotBlank: ~
+            - Type: { type: integer }
