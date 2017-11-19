@@ -30,7 +30,8 @@
         </service>
 
         <service id="Tranchard\CronMonitorApiBundle\Services\Checkers\CriticalChecker"
-                 class="Tranchard\CronMonitorApiBundle\Services\Checkers\CriticalChecker">
+                 class="Tranchard\CronMonitorApiBundle\Services\Checkers\CriticalChecker"
+                 parent="Tranchard\CronMonitorApiBundle\Services\Checkers\Checker">
             <tag name="tranchard.cron_monitor_api.checkers" priority="0"/>
         </service>
     </services>

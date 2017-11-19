@@ -18,7 +18,7 @@
         <service id="Tranchard\CronMonitorApiBundle\EventListener\CheckSubscriber"
                  class="Tranchard\CronMonitorApiBundle\EventListener\CheckSubscriber">
             <argument type="service" id="Tranchard\CronMonitorApiBundle\Services\Checkers\ChainChecker"/>
-            <argument>%tranchard_cron_monitor.monitoring%</argument>
+            <argument>%tranchard_cron_monitor_api.monitoring%</argument>
             <tag name="kernel.event_subscriber"/>
         </service>
 

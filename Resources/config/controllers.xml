@@ -13,7 +13,7 @@
             <argument type="service" id="form.factory"/>
             <argument type="service" id="Tranchard\CronMonitorApiBundle\Repository\CronReporterRepository"/>
             <argument type="service" id="event_dispatcher"/>
-            <argument>%cron_monitor.monitoring%</argument>
+            <argument>%tranchard_cron_monitor_api.monitoring%</argument>
         </service>
     </services>
 </container>

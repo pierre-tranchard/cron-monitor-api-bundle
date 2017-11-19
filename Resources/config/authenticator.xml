@@ -8,7 +8,7 @@
         <service id="Tranchard\CronMonitorApiBundle\Services\Security\ApiSecretAuthenticator"
                  class="Tranchard\CronMonitorApiBundle\Services\Security\ApiSecretAuthenticator"
                  public="false">
-            <argument>%tranchard_cron_monitor.secret%</argument>
+            <argument>%tranchard_cron_monitor_api.secret%</argument>
         </service>
     </services>
 </container>
