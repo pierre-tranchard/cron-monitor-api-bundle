@@ -15,15 +15,16 @@
   },
   "require": {
     "php": ">=7.1",
-    "symfony/symfony": "^3.4|^4.0@beta",
-    "symfony/yaml": "^3.4|^4.0@beta",
+    "psr/log": "^1.0",
+    "symfony/symfony": "^3.4 || ^4.0",
+    "symfony/yaml": "^3.4 || ^4.0",
     "alcaeus/mongo-php-adapter": "^1.1",
     "doctrine/mongodb-odm-bundle": "^3.4",
-    "symfony/serializer": "^3.4|^4.0@beta",
+    "symfony/serializer": "^3.4 || ^4.0",
     "symfony/swiftmailer-bundle": "^3.1"
   },
   "require-dev": {
-    "symfony/phpunit-bridge": "^3.0|^4.0@beta",
+    "symfony/phpunit-bridge": "^3.0 || ^4.0",
     "phpunit/phpunit": "*"
   }
 }
