@@ -9,7 +9,7 @@
         <service id="Tranchard\CronMonitorApiBundle\Services\Checkers\ChainChecker"
                  class="Tranchard\CronMonitorApiBundle\Services\Checkers\ChainChecker"
                  public="true">
-            <argument type="tagged" id="tranchard.cron_monitor_api.checkers"/>
+            <argument type="tagged" tag="tranchard.cron_monitor_api.checkers"/>
         </service>
         <service id="Tranchard\CronMonitorApiBundle\Services\Checkers\ThresholdChecker"
                  class="Tranchard\CronMonitorApiBundle\Services\Checkers\ThresholdChecker"
