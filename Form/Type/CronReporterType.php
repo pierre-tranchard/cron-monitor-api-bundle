@@ -44,6 +44,6 @@ class CronReporterType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'cron_monitor_form_type_cron_reporter';
+        return 'tranchard_cron_monitor_api_form_type_cron_reporter';
     }
 }
