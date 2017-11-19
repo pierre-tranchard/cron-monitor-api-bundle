@@ -1,0 +1,29 @@
+{
+  "name": "pierre-tranchard/cron-monitor-api-bundle",
+  "license": "MIT",
+  "type": "symfony-bundle",
+  "description": "The server side for exposing an API to monitor your cron via the cron-monitor-bundle",
+  "autoload": {
+    "psr-4": {
+      "Tranchard\\CronMonitorApiBundle\\": ""
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tranchard\\CronMonitorApiBundle\\Tests\\": ""
+    }
+  },
+  "require": {
+    "php": ">=7.1",
+    "symfony/symfony": "^4.0@beta",
+    "symfony/yaml": "^4.0@beta",
+    "alcaeus/mongo-php-adapter": "^1.1",
+    "doctrine/mongodb-odm-bundle": "^3.4",
+    "symfony/serializer": "^4.0@beta"
+  },
+  "require-dev": {
+    "symfony/phpunit-bridge": "^4.0@beta",
+    "phpunit/phpunit": "*",
+    "symfony/swiftmailer-bundle": "^3.0"
+  }
+}
