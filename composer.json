@@ -28,7 +28,8 @@
     "doctrine/mongodb-odm-bundle": "^3.4",
     "symfony/serializer": "^4.0@beta",
     "symfony/swiftmailer-bundle": "^3.1",
-    "symfony/config": "^4.0@beta"
+    "symfony/config": "^4.0@beta",
+    "symfony/form": "^4.0@beta"
   },
   "require-dev": {
     "symfony/phpunit-bridge": "^4.0@beta",
