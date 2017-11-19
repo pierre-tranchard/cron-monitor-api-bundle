@@ -1,0 +1,29 @@
+notifications:
+    email:
+        cron-monitor:
+            summary:
+                project: Project
+                job-name: Command
+                count-failed: Number of failed executions
+                from: From
+                to: Until
+                targeted-environment: Targeted Environment
+                status: Status
+                duration: Duration
+                average-duration: Average duration
+                adjusted-average-duration: Adjusted average duration
+                standard-deviation: Standard derivation
+                tokens: Arguments and options
+                duration-unit: "{0,1} %duration% second|]1,Inf[ %duration% seconds"
+                output: Console-Output of the last executed cron
+                exception: Console Exception of the last executed cron
+            failure:
+                subject: "Cron Monitor :: %job% of %project% in %environment% has failed"
+            lock:
+                subject: "Cron Monitor :: %job% of %project% in %environment% has been locked for a while"
+            critical:
+                subject: "Cron Monitor :: %job% of %project% in %environment% is in CRITICAL state"
+            duration_exceeded:
+                subject: "Cron Monitor :: %job% of %project% in %environment% was abnormally long to be executed"
+yes: yes
+no: no

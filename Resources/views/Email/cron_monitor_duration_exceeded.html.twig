@@ -1,0 +1,7 @@
+{% block subject %}
+    {{ 'notifications.email.cron-monitor.duration_exceeded.subject'|trans({'%job%': cronReporter.job, '%project%': cronReporter.project, '%environment%': cronReporter.environment}) }}
+{% endblock %}
+
+{% block body %}
+    {% include "@TranchardCronMonitorApi/Email/cron_monitor_summary.html.twig" with {'cronReporter': cronReporter, 'averageDuration': averageDuration, 'adjustedAverageDuration': adjustedAverageDuration} only %}
+{% endblock %}

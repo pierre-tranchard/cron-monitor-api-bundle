@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+
+    <services>
+        <service id="Tranchard\CronMonitorApiBundle\Services\Checkers\ChainChecker"
+                 class="Tranchard\CronMonitorApiBundle\Services\Checkers\ChainChecker"
+                 public="true">
+            <argument type="tagged" id="tranchard.cron_monitor_api.checkers"/>
+        </service>
+        <service id="Tranchard\CronMonitorApiBundle\Services\Checkers\ThresholdChecker"
+                 class="Tranchard\CronMonitorApiBundle\Services\Checkers\ThresholdChecker"
+                 parent="Tranchard\CronMonitorApiBundle\Services\Checkers\Checker">
+            <tag name="tranchard.cron_monitor_api.checkers" priority="0"/>
+        </service>
+
+        <service id="Tranchard\CronMonitorApiBundle\Services\Checkers\DurationChecker"
+                 class="Tranchard\CronMonitorApiBundle\Services\Checkers\DurationChecker"
+                 parent="Tranchard\CronMonitorApiBundle\Services\Checkers\Checker">
+            <tag name="tranchard.cron_monitor_api.checkers" priority="0"/>
+        </service>
+
+        <service id="Tranchard\CronMonitorApiBundle\Services\Checkers\LockChecker"
+                 class="Tranchard\CronMonitorApiBundle\Services\Checkers\LockChecker"
+                 parent="Tranchard\CronMonitorApiBundle\Services\Checkers\Checker">
+            <tag name="tranchard.cron_monitor_api.checkers" priority="0"/>
+        </service>
+
+        <service id="Tranchard\CronMonitorApiBundle\Services\Checkers\CriticalChecker"
+                 class="Tranchard\CronMonitorApiBundle\Services\Checkers\CriticalChecker">
+            <tag name="tranchard.cron_monitor_api.checkers" priority="0"/>
+        </service>
+    </services>
+
+</container>
