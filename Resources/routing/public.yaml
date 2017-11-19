@@ -1,0 +1,23 @@
+tranchard_cron_monitor_api_cron_reporter_index:
+    path: /v1/cron-reporter
+    methods: [GET]
+    defaults:
+        _controller: Tranchard\CronMonitorApiBundle\Controller\CronReporterController:indexAction
+
+tranchard_cron_monitor_api_cron_reporter_create:
+    path: /v1/cron-reporter
+    methods: [POST]
+    defaults:
+        _controller: Tranchard\CronMonitorApiBundle\Controller\CronReporterController:createAction
+
+tranchard_cron_monitor_api_cron_reporter_edit:
+    path: /v1/cron-reporter/{id}
+    methods: [PUT, PATCH]
+    defaults:
+        _controller: Tranchard\CronMonitorApiBundle\Controller\CronReporterController:editAction
+
+tranchard_cron_monitor_api_cron_reporter_display:
+    path: /v1/cron-reporter/{id}
+    methods: [GET]
+    defaults:
+        _controller: Tranchard\CronMonitorApiBundle\Controller\CronReporterController:displayAction

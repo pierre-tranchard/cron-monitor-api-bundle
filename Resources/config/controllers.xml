@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="Tranchard\CronMonitorApiBundle\Controller\CronReporterController"
+                 class="Tranchard\CronMonitorApiBundle\Controller\CronReporterController"
+                 public="false">
+            <argument type="service" id="serializer"/>
+            <argument type="service" id="doctrine_mongodb.odm.default_document_manager"/>
+            <argument type="service" id="form.factory"/>
+            <argument type="service" id="Tranchard\CronMonitorApiBundle\Repository\CronReporterRepository"/>
+            <argument type="service" id="event_dispatcher"/>
+            <argument>%cron_monitor.monitoring%</argument>
+        </service>
+    </services>
+</container>
