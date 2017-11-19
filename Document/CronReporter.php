@@ -314,4 +314,46 @@ class CronReporter
     {
         return self::$statuses;
     }
+
+    /**
+     * @return bool
+     */
+    public function isLocked(): bool
+    {
+        return $this->is(self::STATUS_LOCKED);
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasSucceeded(): bool
+    {
+        return $this->is(self::STATUS_SUCCESS);
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasFailed(): bool
+    {
+        return $this->is(self::STATUS_FAILED);
+    }
+
+    /**
+     * @return bool
+     */
+    public function isCritical(): bool
+    {
+        return $this->is(self::STATUS_CRITICAL);
+    }
+
+    /**
+     * @param string $status
+     *
+     * @return bool
+     */
+    private function is(string $status): bool
+    {
+        return $this->getStatus() === $status;
+    }
 }

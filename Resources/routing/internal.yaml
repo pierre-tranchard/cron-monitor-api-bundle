@@ -1,0 +1,5 @@
+tranchard_cron_monitor_api_cron_reporter_status:
+    path: /v1/cron-reporter/status
+    methods: [GET]
+    defaults:
+        _controller: Tranchard\CronMonitorApiBundle\Controller\CronReporterController:statusAction
