@@ -3,8 +3,10 @@
 namespace Tranchard\CronMonitorApiBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
+use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
+use Symfony\Component\DependencyInjection\Loader;
 
 class CronMonitorExtension extends Extension
 {
@@ -61,6 +63,9 @@ class CronMonitorExtension extends Extension
         }
 
         $this->storeConfiguration($container, $config);
+
+        $xmlLoader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $xmlLoader->load('repositories.xml');
     }
 
     /**
