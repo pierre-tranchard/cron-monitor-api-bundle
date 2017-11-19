@@ -20,7 +20,6 @@
                     <argument key="cron_monitor_critical">TranchardCronMonitorApiBundle:Email:cron_monitor_critical.html.twig</argument>
                 </argument>
             </argument>
-
         </service>
     </services>
 </container>
