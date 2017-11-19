@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="Tranchard\CronMonitorApiBundle\EventListener\JsonRequestListener"
+                 class="Tranchard\CronMonitorApiBundle\EventListener\JsonRequestListener">
+            <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest"/>
+        </service>
+
+        <service id="Tranchard\CronMonitorApiBundle\EventListener\ExceptionListener"
+                 class="Tranchard\CronMonitorApiBundle\EventListener\ExceptionListener">
+            <tag name="kernel.event_listener" event="kernel.exception" method="onKernelException"/>
+        </service>
+
+        <service id="Tranchard\CronMonitorApiBundle\EventListener\CheckSubscriber"
+                 class="Tranchard\CronMonitorApiBundle\EventListener\CheckSubscriber">
+            <argument type="service" id="Tranchard\CronMonitorApiBundle\Services\Checkers\ChainChecker"/>
+            <argument>%tranchard_cron_monitor.monitoring%</argument>
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
+    </services>
+</container>

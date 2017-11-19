@@ -11,6 +11,7 @@
             <factory service="doctrine_mongodb.odm.default_document_manager" method="getRepository"/>
             <argument>Tranchard\CronMonitorApiBundle\Document\CronReporter</argument>
         </service>
+
         <service id="Tranchard\CronMonitorApiBundle\Repository\NotificationRepository"
                  class="Tranchard\CronMonitorApiBundle\Repository\NotificationRepository"
                  public="false">
