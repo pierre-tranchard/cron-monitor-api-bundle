@@ -1,0 +1,59 @@
+<table class="table">
+    <tr>
+        <th>{{ 'notifications.email.cron-monitor.summary.project'|trans }}</th>
+        <td>{{ cronReporter.project }}</td>
+    </tr>
+    <tr>
+        <th>{{ 'notifications.email.cron-monitor.summary.job-name'|trans }}</th>
+        <td>{{ cronReporter.job }}</td>
+    </tr>
+    {% if 'tokens' in cronReporter.extraPayload|keys %}
+        <tr>
+            <th>{{ 'notifications.email.cron-monitor.summary.tokens'|trans }}</th>
+            <td>{{ cronReporter.extraPayload['tokens']|json_encode }}</td>
+        </tr>
+    {% endif %}
+    <tr>
+        <th>{{ 'notifications.email.cron-monitor.summary.targeted-environment'|trans }}</th>
+        <td>{{ cronReporter.environment }}</td>
+    </tr>
+    {% if countFailed is defined %}
+        <tr>
+            <th>{{ 'notifications.email.cron-monitor.summary.count-failed'|transchoice(countFailed, {'%times%': countFailed}) }}</th>
+            <td>{{ countFailed }}</td>
+        </tr>
+    {% endif %}
+    {% if from is defined %}
+        <tr>
+            <th>{{ 'notifications.email.cron-monitor.summary.from'|trans }}</th>
+            <td>{{ from|date('Y-m-d H:i:s') }}</td>
+        </tr>
+    {% endif %}
+    {% if to is defined %}
+        <tr>
+            <th>{{ 'notifications.email.cron-monitor.summary.to'|trans }}</th>
+            <td>{{ to|date('Y-m-d H:i:s') }}</td>
+        </tr>
+    {% endif %}
+    {% if cronReporter.duration > 0 %}
+        <tr>
+            <th>{{ 'notifications.email.cron-monitor.summary.duration'|trans }}</th>
+            {% set duration = (cronReporter.duration / 1000000)|round(4) %}
+            <td>{{ 'notifications.email.cron-monitor.summary.duration-unit'|transchoice(duration, {'%duration%': duration}) }}</td>
+        </tr>
+    {% endif %}
+    {% if averageDuration is defined %}
+        <tr>
+            <th>{{ 'notifications.email.cron-monitor.summary.average-duration'|trans }}</th>
+            {% set duration = (averageDuration / 1000000)|round(4) %}
+            <td>{{ 'notifications.email.cron-monitor.summary.duration-unit'|transchoice(duration, {'%duration%': duration}) }}</td>
+        </tr>
+    {% endif %}
+    {% if adjustedAverageDuration is defined %}
+        <tr>
+            <th>{{ 'notifications.email.cron-monitor.summary.adjusted-average-duration'|trans }}</th>
+            {% set duration = (adjustedAverageDuration  / 1000000)|round(4) %}
+            <td>{{ 'notifications.email.cron-monitor.summary.duration-unit'|transchoice(duration, {'%duration%': duration}) }}</td>
+        </tr>
+    {% endif %}
+</table>

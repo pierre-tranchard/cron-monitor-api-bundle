@@ -1,0 +1,13 @@
+{% block subject %}
+    {{ 'notifications.email.cron-monitor.critical.subject'|trans({'%job%': cronReporter.job, '%project%': cronReporter.project, '%environment%': cronReporter.environment}) }}
+{% endblock %}
+
+{% block body %}
+    {% include "@TranchardCronMonitorApi/Email/cron_monitor_summary.html.twig" with {'cronReporter': cronReporter, 'countFailed': countFailed, 'from': from, 'to':to} only %}
+
+    {% if cronReporter.extraPayload['output'] is defined %}
+        <h2>{{ 'notifications.email.cron-monitor.summary.output'|trans }}</h2>
+
+        {{ cronReporter.extraPayload['output']|nl2br|raw }}
+    {% endif %}
+{% endblock %}

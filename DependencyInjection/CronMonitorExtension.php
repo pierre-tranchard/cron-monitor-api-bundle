@@ -66,6 +66,8 @@ class CronMonitorExtension extends Extension
 
         $xmlLoader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $xmlLoader->load('repositories.xml');
+        $xmlLoader->load('checkers.xml');
+        $xmlLoader->load('notification_system.xml');
     }
 
     /**
