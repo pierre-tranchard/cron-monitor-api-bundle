@@ -60,7 +60,7 @@ class CronReporter
     private $description;
 
     /**
-     * @var \DateTimeImmutable
+     * @var \DateTimeInterface
      * @MongoDB\Field(type="date", nullable=false)
      * @MongoDB\Index()
      * @Groups({"list", "display"})
@@ -111,7 +111,7 @@ class CronReporter
     /**
      * @return string
      */
-    public function getId(): string
+    public function getId()
     {
         return $this->id;
     }
@@ -119,7 +119,7 @@ class CronReporter
     /**
      * @return string
      */
-    public function getProject(): string
+    public function getProject()
     {
         return $this->project;
     }
@@ -139,7 +139,7 @@ class CronReporter
     /**
      * @return string
      */
-    public function getJob(): string
+    public function getJob()
     {
         return $this->job;
     }
@@ -159,7 +159,7 @@ class CronReporter
     /**
      * @return string
      */
-    public function getDescription(): string
+    public function getDescription()
     {
         return $this->description;
     }
@@ -177,19 +177,19 @@ class CronReporter
     }
 
     /**
-     * @return \DateTimeImmutable
+     * @return \DateTimeInterface
      */
-    public function getCreatedAt(): \DateTimeImmutable
+    public function getCreatedAt(): \DateTimeInterface
     {
         return $this->createdAt;
     }
 
     /**
-     * @param \DateTimeImmutable $createdAt
+     * @param \DateTimeInterface $createdAt
      *
      * @return CronReporter
      */
-    public function setCreatedAt(\DateTimeImmutable $createdAt): CronReporter
+    public function setCreatedAt(\DateTimeInterface $createdAt): CronReporter
     {
         $this->createdAt = $createdAt;
 
@@ -199,7 +199,7 @@ class CronReporter
     /**
      * @return string
      */
-    public function getStatus(): string
+    public function getStatus()
     {
         return $this->status;
     }
@@ -290,7 +290,7 @@ class CronReporter
     /**
      * @return string
      */
-    public function getEnvironment(): string
+    public function getEnvironment()
     {
         return $this->environment;
     }
