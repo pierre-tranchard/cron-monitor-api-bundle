@@ -95,7 +95,7 @@ threshold:
 Here's the full configuration for this checker
 ```yaml
 lock:
-    use_cron_tokens: true|false # Refine or notthe check based on the command tokens
+    use_cron_tokens: true|false # Refine or not the check based on the command tokens
     duration_interval: 900 # meantime between 2 notifications sent
 ```
 
@@ -115,3 +115,4 @@ critical:
 * If it needs a new status, declare it in the client bundle `CronReporter` model and in the `CronReporter` document in this bundle.
 * Add the new status to the enumeration to make it valid during form validation
 * Update the edit action of the `CronReporterController` to use your new event. 
+* Describe the new checker configuration into the bundle configuration
