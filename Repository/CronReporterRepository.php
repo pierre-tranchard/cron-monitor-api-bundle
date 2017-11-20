@@ -2,7 +2,6 @@
 
 namespace Tranchard\CronMonitorApiBundle\Repository;
 
-use Doctrine\MongoDB\ArrayIterator;
 use Doctrine\MongoDB\Iterator;
 use Doctrine\ODM\MongoDB\Cursor;
 use Doctrine\ODM\MongoDB\DocumentRepository;
@@ -82,7 +81,7 @@ class CronReporterRepository extends DocumentRepository
      * @param int|null    $skip
      * @param string|null $distinctField
      *
-     * @return ArrayIterator
+     * @return Cursor
      */
     public function getBy(
         array $criteria,
@@ -90,7 +89,7 @@ class CronReporterRepository extends DocumentRepository
         int $limit = null,
         int $skip = null,
         string $distinctField = null
-    ): ArrayIterator {
+    ): Cursor {
         $queryBuilder = $this->createQueryBuilder();
         foreach ($criteria as $field => $criterion) {
             if (is_array($criterion)) {
